@@ -250,7 +250,8 @@
         /* ========== СЕТКА ВИДЕО ========== */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            /* Изменено: 3 колонки вместо 4 */
+            grid-template-columns: repeat(3, 1fr);
             gap: 60px 40px;
             max-width: 1800px;
             margin: 0 auto;
@@ -273,11 +274,12 @@
         }
 
         .vertical-videos {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-top: 80px;
+              grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4 колонки для вертикальных видео */
+                gap: 40px;
+                margin-top: 80px;
+
         }
 
         .video-preview {
@@ -433,26 +435,27 @@
                 gap: 50px 30px;
                 grid-template-columns: repeat(3, 1fr);
             }
-            
             .vertical-videos {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        grid-template-columns: repeat(4, 1fr); /* Оставляем 4 колонки */
+        gap: 30px;
+    }
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
             .video-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
             .vertical-videos {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки на средних экранах */
+    }
         }
 
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
             
             .contacts {
@@ -466,57 +469,115 @@
             
             .hero-image,
             .hero-content {
-                margin: 0 auto;
+                margin: 20px auto;
                 flex: 0 0 auto;
-                max-width: 80%;
+                max-width: 90%;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
             }
         }
 
         @media (max-width: 768px) {
             .navbar {
-                padding: 15px 20px;
+                padding: 12px 15px;
             }
             
             .nav-links {
-                gap: 20px;
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 1rem;
+                padding: 3px 0;
             }
             
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .section {
-                padding: 100px 20px;
+                padding: 80px 20px;
             }
             
             .video-grid,
             .vertical-videos {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 40px;
+                        margin-top: 60px;
+
             }
             
             .vertical-videos {
-                margin-top: 60px;
+                margin-top: 40px;
+            }
+
+            .hero-content {
+                padding: 25px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-icon {
+                margin-bottom: 10px;
             }
         }
 
         @media (max-width: 576px) {
             .nav-links {
-                gap: 15px;
+                gap: 10px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
             .nav-links a {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .hero-content {
-                padding: 20px;
+                padding: 20px 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: auto;
+                padding: 40px 15px;
+            }
+
+            .hero-image {
+                max-width: 300px;
+                max-height: 400px;
+            }
+
+            .section {
+                padding: 60px 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+
+            .section-title::after {
+                width: 60px;
+                bottom: -10px;
             }
         }
 
@@ -664,6 +725,63 @@
                 </div>
                 <div class="video-title">Реклама</div>
             </div>
+
+            <div class="video-item" 
+                 data-video="vid/rec.mp4"
+                 data-orientation="horizontal">
+                <div class="video-preview">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="vid/rec-preview.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-title">Реклама</div>
+            </div>
+
+            <div class="video-item" 
+                 data-video="vid/rec.mp4"
+                 data-orientation="horizontal">
+                <div class="video-preview">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="vid/rec-preview.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-title">Реклама</div>
+            </div>
+
+            <div class="video-item" 
+                 data-video="vid/rec.mp4"
+                 data-orientation="horizontal">
+                <div class="video-preview">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="vid/rec-preview.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-title">Реклама</div>
+            </div>
+
+            <div class="video-item" 
+                 data-video="vid/rec.mp4"
+                 data-orientation="horizontal">
+                <div class="video-preview">
+                    <video muted loop playsinline preload="metadata">
+                        <source src="vid/rec-preview.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="video-title">Реклама</div>
+            </div>
+
             <div class="video-item" 
                  data-video="vid/rec.mp4"
                  data-orientation="horizontal">
